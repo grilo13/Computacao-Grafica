@@ -1,3 +1,3 @@
 # Trabalhos-CG
 
-Trabalhos da disciplina Computação Gráfica
+Trabalhos realizados na disciplina de Computação Gráfica
