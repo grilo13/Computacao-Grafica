@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+    <script>
+
+    function square(){
+        var s = new Path2D();
+        s.moveTo(0,0);
+        s.lineTo(100,0);
+        //s.arcTo(100,0,0,100,100);
+        s.lineTo(100,100);
+        //s.arcTo(100,100,0,0,100);
+        s.lineTo(0,100);
+        //s.arcTo(0,100,0,0,100);
+        s.lineTo(0,0);
+
+        return s;
+    }
+
+    function circle(){
+        var c = new Path2D();
+        c.arc(50,50, 48 ,0, Math.PI * 2);
+        //c.ellipse(50,50,45,45,0,0,2*Math.PI);
+        return c;
+    }
+
+    function drawcircle(s2){
+        var s_draw2 = circle();
+        s2.stroke(s_draw2);
+        s2.fillStyle = "yellow";
+        s2.fill(s_draw2);
+    }
+
+    function drawsquare(s1){
+        var s_draw = square();
+        s1.stroke(s_draw);
+        s1.fillStyle = "blue";
+        s1.fill(s_draw);
+    }
+
+    function main(){
+       var c2d = document.getElementById('xpto').getContext("2d");
+       drawsquare(c2d);
+       drawcircle(c2d);
+    }
+
+
+
+
+
+    </script>
+   
+   </head><body onload="main();">
+     <canvas id="xpto">
+   
+</canvas></body></html>

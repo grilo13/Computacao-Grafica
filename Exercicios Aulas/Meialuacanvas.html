@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+    <script>
+
+    function arc(){
+        var p = new Path2D();
+        p.moveTo(80,0);
+        p.quadraticCurveTo(0,50,80,100);
+        p.quadraticCurveTo(40,50,80,0);
+
+
+        return p;
+    }
+
+    function draw(s1){
+        var draw = arc();
+        s1.stroke(draw);
+        s1.fillStyle = "blue";
+        s1.fill(draw);
+    }
+
+    function main(){
+       var c2d = document.getElementById('xpto').getContext("2d");
+       draw(c2d);
+    }
+
+
+
+
+
+    </script>
+   
+   </head><body onload="main();">
+     <canvas id="xpto">
+   
+</canvas></body></html>

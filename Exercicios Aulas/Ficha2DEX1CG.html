@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+ctx.beginPath();     
+ctx.moveTo(0, 0);               // Create a starting point
+ctx.arcTo(64, 64, 0, 64, 16);   // Create an arc, 64 64 onde aponta e vira, 0 64 onde vai final
+//ctx.lineTo(0, 64);             // Continue with vertical line
+ctx.stroke();                     // Draw it, contorno
+
+ctx.fillStyle = 'blue';
+// starting point
+ctx.fillRect(0, 0, 5, 5);
+
+ctx.fillStyle = 'green';
+// control point one
+ctx.fillRect(64, 64, 5, 5);
+
+ctx.fillStyle = 'red';
+// control point two
+ctx.fillRect(0,64,5,5);
+
+
+</script> 
+
+</body>
+</html>

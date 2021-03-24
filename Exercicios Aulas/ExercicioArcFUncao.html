@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+    <script>
+
+    function line(){
+        var s = new Path2D();
+        s.moveTo(0,0);
+        s.arcTo(64,64,0,64,16);
+
+        return s;
+    }
+
+    function draw(s1){
+        var draw_s = line();
+        s1.stroke(draw_s);
+    }
+
+    function main(){
+       var c2d = document.getElementById('xpto').getContext("2d");
+       draw(c2d);
+    }
+
+    </script>
+   
+   </head><body onload="main();">
+     <canvas id="xpto">
+   
+</canvas></body></html>

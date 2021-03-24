@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script>
+
+/*GERAR
+1.Escreva uma função aleatorios(n) que devolve um array com n números aleatórios.
+*/
+function aleatorios(n) {
+    let arr = new Array(n);
+    for (let i = 0; i < n; i++) arr[i] = Math.random();
+    console.log(arr);
+    return arr;
+}
+
+/*
+2.Escreva uma função intervalo(a, b) que devolve um array com os números inteiros entre a e b incluindo ambos os extremos. Se b < a o resultado deve ser a lista vazia [].
+*/
+function intervalo(a,b){
+    let arr = [];
+    for(let i =  a; i <= b; i++){
+        arr.push(i);
+    }
+    console.log(arr);
+    return arr;
+}
+
+/*FILTRAR
+1.Escreva uma função linspace(a, b, n) que enche um array com n números reais (float) entre a e b, igualmente espaçados. Por exemplo, linspace(0, 1, 3) devolve [0.0, 0.5, 1.0].
+*/ 
+/*function linspace(a, b, n){
+    let arr = [];
+
+    for(let i = 0; i < n; i++){              nao feita, nao sei fazer
+        while(a < b){
+            arr.push(random(a));
+            a++;
+        }
+    }
+    console.log(arr);
+    return arr;
+}
+*/
+
+/*
+Escreva uma função pares(x) que tem como argumento um array x de números inteiros e que devolve um array apenas com os números pares. Por exemplo pares([1, 2, 4, 5, 2, 3]) devolve [2, 4, 2].
+*/
+
+function pares(x) {
+    let arr = [];
+     for (let i = 0; i < x.length;  i++) {
+         if (x[i] % 2 === 0) {
+             arr.push(x[i]);
+         }
+     }
+    // for (let i in x) {
+    //     if (x[i] % 2 === 0) {
+    //         arr.push(x[i]);
+    //     }
+    // }
+    //for (let xi of x) {
+    //    if (xi % 2 === 0) {
+    //        arr.push(xi);
+    //    }
+    //}
+    console.log(arr);
+    return arr;
+}
+
+/*
+2.Escreva uma função positivos(x) que tem como argumento um array x de números reais e que devolve um array apenas com os números positivos. 
+Por exemplo positivos([1, -2.5, 0.4, 0.0, -1.5, 2, 2.3]) devolve [1, 0.4, 2, 2.3].
+*/
+
+function positivos(x){
+    let arr = [];
+    for(let i = 0; i < x.length; i++){
+        if(x[i] > 0){
+            arr.push(x[i]);
+        } else {
+            continue;
+        }
+    }
+    console.log(arr);
+    return arr;    
+}
+
+/*
+3.Escreva uma função limite_sup(x, a) que tem como argumentos um array x de números reais e um valor a e que devolve um array apenas com os números menores ou iguais que o valor a. 
+Por exemplo limite_sup([1, -2.5, 0.4, 0.0, -1.5, 2, 2.3], 0.4) devolve [1, -2.5, 0.4, 0.0, -1.5].
+*/
+
+function limite_sup(x, a){
+    let arr = [];
+    for(let i = 0; i < x.length; i++){
+        if(x[i] >= a){
+            arr.push(x[i]);
+        } else {
+            continue;
+        }
+    }
+    console.log(arr);
+    return arr;
+}
+
+
+
+/*TRANSFORMAR
+1.Escreva uma função dobro(x) que tem como argumento um array x de números reais e que devolve um array com os dobros desses números. Por exemplo dobro([1, 2.1, 4, 5, -2, 3]) devolve [2, 4.2, 8, 10, -4, 6].
+*/
+
+function dobro(x) {
+    let y = new Array(x.length);
+    for (let i in x) {
+        y[i] = 2 * x[i];
+    }
+    return y;
+}
+
+/*
+2.Escreva uma função quadrado(x) que tem como argumento um array x de números reais e que devolve um array com os quadrados desses números. 
+Por exemplo quadrado([1, -2.5, 0.4]) devolve [1, 6.25, 0.16].*/
+
+function quadrado(x){
+    let arr = [];
+
+    for(let i = 0; i < x.length; i++){
+        arr.push(x[i] * x[i]);
+    }
+    console.log(arr);
+    return arr;
+}
+
+/*
+3.Escreva uma função unicos(x) que tem como argumento um array x de números reais e que devolve um array sem valores repetidos. 
+Por exemplo quadrado([1, -2.5, 1]) devolve [1, -2.5].
+*/
+
+function unicos(x){
+    let arr = [];
+
+    for(let i = 0; i < x.length; i++){
+        for(let j = i + 1; j < x.length; ){    //   AINDA NAO ACABEI ESTE NAO SEI
+            if(x[j] === x[i]){
+                
+            }
+        }
+    }
+    console.log(arr);
+    return arr;
+
+}
+
+/*
+4.Escreva uma função crescente(x) que tem como argumento um array x de números reais e que devolve um array com os valores por ordem crescente. 
+Por exemplo crescente([1, -2.5, 1]) devolve [-2.5, 1, 1].
+*/
+
+function crescente(x){
+
+    for(let i = 0; i < x.length; i++){
+        for(let j = i + 1; j < x.length; j++){
+            if(x[i] > x[j]){
+                let aux = x[i];
+                x[i] = x[j];
+                x[j] = aux;              
+            }
+        }
+    }
+    return x;
+}
+
+/*
+5.Escreva uma função estender(x, n) que tem como argumento um array x de números reais e um valor inteiro n e que devolve um array exatamente de comprimento n. Se o comprimento de x for menor que n devem ser acrescentados zeros suficientes. 
+Se o comprimento de x for maior que n os valores a mais são descartados. 
+Por exemplo estender([1, -2.5], 4) devolve [1, -2.5, 0, 9], e estender([1, 6.25, 0.16], 2) devolve [1, 6.25].
+*/
+
+function estender(x,n){
+    let arr = [];
+
+    if(x.length > n){
+        for(let i = n; i <= x.length; i++){
+            arr.pop(x[i]);
+        }
+    } 
+    else if(x.length === n){
+        for(let k = 0; k < x.length; k++){
+            arr.push(x[k]);
+        }
+    } 
+    else if(x.length < n){
+        for(let k = 0; k < x.length; k++){
+            arr.push(x[k]);
+        }
+
+        for(let j = x.length; j < n; j++){
+            x[j] = 0;
+            arr.push(x[j]);
+        }
+    }
+    return arr;
+}
+
+/*COMBINAR
+1.Escreva uma função juntar(x, y) que tem como argumentos dois array x, y de números reais e que devolve um array com os valores de x seguidos pelos valores de y.
+ Por exemplo juntar([1, 2.1, 4], [5, -2, 3]) devolve [1, 2.1, 4, 5, -2, 3]
+*/
+
+function juntar(x,y){
+    let arr = [];
+
+    for(let i = 0; i < x.length; i++){
+        arr.push(x[i]);
+    }
+
+    for(let j = 0; j < y.length; j++){
+        arr.push(y[j]);
+    }
+
+    return arr;
+}
+
+/*
+2.Escreva uma função somar(x, y) que tem como argumentos dois array x, y de números reais e que devolve um array com os valores de x somados aos valores de y pela mesma ordem.
+ Se os argumentos tiverem comprimentos diferentes o resultado deve ser a lista vazia: [].
+ Por exemplo somar([1, 2.1, 4], [5, -2, 3]) devolve [6, 0.1, 7] e somar([1, 2], [3]) devolve [].
+*/
+
+function somar2(x,y){
+    let z = new Array(x.length);
+
+    if(x.length != y.length){
+        return [];
+    } else {
+        for(let i = 0; i < x.length; i++){
+            z[i] = x[i] + y[i];
+        }
+    }
+
+    return z;
+}
+
+
+
+/*
+Escreva uma função somar(x, y) que tem como argumentos dois array x, y de números reais e que devolve um array com os valores de x somados aos valores de y pela mesma ordem. Se os argumentos tiverem comprimentos diferentes o resultado deve ser a lista vazia: []. Por exemplo somar([1, 2.1, 4], [5, -2, 3]) devolve [6, 0.1, 7] e somar([1, 2], [3]) devolve [].
+*/
+
+function somar(x, y) {
+    // Testar se x e y têm o mesmo comprimento.
+    if (x.length !== y.length) return [];
+    // OK. Proseguir para a soma...
+    let z = new Array(x.length);
+    for (let i in  x) {
+        z[i] = x[i] +  y[i];
+    }
+    return z;
+}
+
+/*AGRUPAR
+1.Escreva uma função soma(x) que tem como argumento um array x de números reais e que devolve a soma desses números. Por exemplo soma([1, 2, 3, 4]) devolve 10.
+*/
+
+function soma(x){
+    let y = 0;
+
+    for(let i = 0; i < x.length; i++){
+        y = y + x[i];
+
+    }
+    return y;
+}
+
+/*
+2. Escreva uma função media(x) que tem como argumento um array x de números reais e que devolve a média desses números. Por exemplo media([1, 2, 3, 4]) devolve 2.5.
+*/
+
+function media(x){
+    let y = 0;
+    let z;
+
+    for(let i = 0; i < x.length; i++){
+        y = y + x[i];
+    }
+
+    z = y / x.length;
+    return z;
+}
+
+/*
+3.Escreva uma função max(x) que tem como argumento um array x de números reais e que devolve o maior desses números. Por exemplo max([1, 2, 3, 4]) devolve 4.
+*/
+function max(x) {
+    let u = -Infinity;
+    for (let xi of x) {
+        if (xi > u) {
+            u = xi;
+        }
+    }
+    return u;
+}
+
+/*
+4.Escreva uma função min(x) que tem como argumento um array x de números reais e que devolve o menor desses números. Por exemplo min([1, 2, 3, 4]) devolve 1.
+*/
+function min(x){
+    let min = x[0];
+
+    for(let i = 1; i < x.length; i++){
+        if(x[i] < min){
+            min = x[i];
+        }
+    }
+    return min;
+}
+
+////////////////////////
+
+function argmax(x){
+    let maior = x[0];
+    let aux = 0;
+
+    for(let i = 0; i < x.length; i++){
+
+        if(x[i] > maior){
+            maior = x[i];
+            aux = i;
+        }
+    }
+    return {index: aux, value: maior};
+}
+
+
+
+function main() {
+    let consola = document.getElementById("xpto");
+    let resposta = argmax([10,40,5,100]);
+    console.log(resposta);
+    consola.innerHTML = resposta;
+}
+        </script>
+    </head>
+    <body onload="main();">
+        <p id="xpto" />
+    </body>
+</html>

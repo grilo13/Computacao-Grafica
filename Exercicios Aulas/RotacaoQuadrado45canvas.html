@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+    <script>
+
+
+    function quadrado(){
+        var s = new Path2D();
+        s.rect(100,100,50,50);
+
+        return s;
+    }
+    
+    function desenho(s1){
+        var desenho = quadrado();
+        s1.rotate(20 * Math.PI / 90);
+        s1.stroke(desenho);
+    }
+
+    function main(){
+       var c2d = document.getElementById('xpto').getContext("2d");
+       desenho(c2d);
+    }
+
+    </script>
+   
+   </head><body onload="main();">
+     <canvas id="xpto">
+   
+</canvas></body></html>
